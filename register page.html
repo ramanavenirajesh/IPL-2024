@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="username">username:</label>
+        <input type="text" id="username".value="">
+
+        <label for="password">password:</label>
+        <input type="text" id="password".value="">
+
+        <label for="email">email:</label>
+        <input type="text" id="email".value="">
+
+        <label for="mobile">mobile</label>
+        <input type="text" id="mobile".value="">
+
+        <button id="register">register</button>
+
+    </form>
+    <script>
+
+        var btn=document.getElementById("register")
+        var arr=[];
+        btn=addEventListener("click",function(e){
+            e.preventDefault();
+
+            var username=document.getElementById("username").value;
+
+            var password=document.getElementById("password").value;
+
+            var email=document.getElementById("email").value;
+
+            var mobile=document.getElementById("mobile").value;
+
+            console.log(username , password , email , mobile);
+
+            var obj={
+                username:username,
+                password:password,
+                email:email,
+                mobile:mobile,
+            }
+           // console.log(obj)
+            arr.push(obj)
+            localStorage.setItem("register",JSON.stringify(arr))
+
+            var a=confirm("do you want to go to login page")
+            if(a){
+                window.location.assign("loginpage.html")
+            }
+
+
+        })
+        
+        
+    </script>
+</body>
+</html>
